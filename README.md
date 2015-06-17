@@ -20,6 +20,7 @@ NSLog(@"Of the bells, bells, bells, bells--");
 NSLog(@"Bells, bells, bells--");
 NSLog(@"To the moaning and the groaning of the bells.");
 ```
+
 **//Flat-fact:** *Generating the last few lines of Edgar Allan Poe's poem "Bells" is a common code-challenge among programmers.*
 
 So what happens when we want to perform the same action multiple times without retyping it? We create a loop!
@@ -58,6 +59,7 @@ Before we start on our `for` loop, we're going to need a container to hold the s
 ```objc
 NSMutableString *grammarQuirk = [[NSMutableString alloc] init];
 ```
+
 Remember that when creating a mutable type, we can't use the literal syntax directly since it creates immutable `NSString` objects. The line above will generate an empty mutable string, which is exactly what we want to start with in this case.
     
 ### Setting The Counter
@@ -69,6 +71,7 @@ for (initialization; condition; increment) {
     statements
 }
 ```
+
 This is really handy for reminding us what goes where. In this first line, we need to declare our counter, its end point check, and the increment of the counts between each loop. Filled in, that first line should look like this:
 
 ```objc
@@ -76,6 +79,7 @@ for (NSUInteger i = 0; i < 8; i++) {
     statements
 }
 ```
+
 **Note:** *It's a general practice to start the loop's counter at* `0` *since loops are often used for passing through arrays by index which begins at* `0`. *We'll discuss arrays in the next reading.*
 
 ### Develop The Behavior
@@ -83,7 +87,7 @@ for (NSUInteger i = 0; i < 8; i++) {
 Now that we have our counter set up to govern our loop for eight passes, let's build the loop's body of statements. We want to add the word "buffalo" each time, so let's use the `appendString:` method to add it to our sentence within the loop:
 
 ```objc
-NSMutableString *grammarQuirk = [[NSMutableString alloc]init];
+NSMutableString *grammarQuirk = [[NSMutableString alloc] init];
 
 for (NSUInteger i = 0; i < 8; i++) {
     NSString *buffalo = @"buffalo";
@@ -92,13 +96,14 @@ for (NSUInteger i = 0; i < 8; i++) {
 
 NSLog(@"%@", grammarQuirk);
 ```
+
 This will print: 
 `buffalobuffalobuffalobuffalobuffalobuffalobuffalobuffalo`.
 
 Hm, well that's a good start, but it's not really a sentence yet. Let's use the `appendFormat:` method instead in order to add a space between each word.
 
 ```objc
-NSMutableString *grammarQuirk = [[NSMutableString alloc]init];
+NSMutableString *grammarQuirk = [[NSMutableString alloc] init];
 
 for (NSUInteger i = 0; i < 8; i++) {
     NSString *buffalo = @"buffalo";
@@ -107,6 +112,7 @@ for (NSUInteger i = 0; i < 8; i++) {
 
 NSLog(@"%@", grammarQuirk);
 ```
+
 This will print: 
 `buffalo buffalo buffalo buffalo buffalo buffalo buffalo buffalo `.
 
@@ -115,7 +121,7 @@ This will print:
 That's better, but we need to add some checks. We can actualy put conditionals *within* the loop's body that will only perform the given actions on certain iterations of the loop. Let's use an `if` statement and the `capitalizedString` method to turn the first, third, and seventh words into proper nouns:
 
 ```objc
-NSMutableString *grammarQuirk = [[NSMutableString alloc]init];
+NSMutableString *grammarQuirk = [[NSMutableString alloc] init];
 
 for (NSUInteger i = 0; i < 8; i++) {
     NSString *buffalo = @"buffalo";
@@ -127,13 +133,14 @@ for (NSUInteger i = 0; i < 8; i++) {
     
 NSLog(@"%@", grammarQuirk);
 ```
+
 This will print: 
 `Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo `.
 
 We're almost there! For it to be a truly correct sentence, however, we need to end it with a period. Let's add a separate check to see if the loop is on the final word so it can decide whether to add either a space before the next word or the period that ends the sentence. Since we only need to add one period, we can write our check against the final word, and allow adding a space to remain the default behavior:
 
 ```objc
-NSMutableString *grammarQuirk = [[NSMutableString alloc]init];
+NSMutableString *grammarQuirk = [[NSMutableString alloc] init];
 
 for (NSUInteger i = 0; i < 8; i++) {
     NSString *buffalo = @"buffalo";
@@ -150,6 +157,7 @@ for (NSUInteger i = 0; i < 8; i++) {
     
     NSLog(@"%@", grammarQuirk);
 ```
+
 This will print: 
 `Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.`.
 
