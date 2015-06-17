@@ -10,7 +10,7 @@
 
 Unlike most humans, computers are really great at performing repetitive tasks quickly and accurately. This is a lot of why we find them so useful!
 
-So far, everything that we've covered has been single-instruction, meaning everything that we've typed only get run or executed once. We can copy/paste easily enough, but that only works for a handleful of repetitions and can quickly make our code difficult to read.
+So far, everything that we've covered has a simple flow—what we've typed only gets executed once. We can copy/paste easily enough, but that only works for a handful of repetitions and can quickly make our code difficult to read.
 
 ```objc
 NSLog(@"To the rolling of the bells--");
@@ -26,18 +26,18 @@ So what happens when we want to perform the same action multiple times without r
 
 ## Loop Anatomy 101
 
-A loop is the concept in structured programming of repeating a set of instructions until a condition or set of conditions is met. They are generally governed by a counter that is set at run time so that the number of iterations that the loop performs is correct for the situation to which it is being applied. In Objective-C, the basic form of a loop is known as the `for` loop.
+In structured programming, a "loop" is the concept of repeating a set of instructions until a condition or set of conditions is met. They are generally governed by a "counter" variable that is set at run time so that the number of iterations that the loop performs is dynamic and correct for its present situation. In Objective-C, one of the basic forms of a loop the `for` loop.
 
 The `for` loop is named such because it begins with the key word "for". It has three parts: 
 
-  * The function name, in this case `for`.
-  * The conditional counter inside the round brackets `(` `)`, which is comprised of three short statements separated by semi-colons (`;`):
+  * The name of the loop construct, in this case `for`.
+  * A parenthetical `(` `)` that which is comprised of three short statements separated by semicolons (`;`):
       - the variable "initialization" (usually `NSUInteger i`),
-      - the "conditional" check (usually `i < n`),
+      - the "conditional" check (usually `i < n` for some value `n`),
       - the "increment" step for each pass of the loop (usually `i++`).
   * The body of instruction "statements" inside the curly braces `{` `}`.
 
-**Note:** *The "increment operator" (* `++` *) means "add one" and is equivalent to the phrase* `+= 1`.
+**Note:** *The "increment operator" (* `++` *) means "add one" and is equivalent to setting the integer to itself plus one, as in* `i = i + 1`.
 
 ```objc
 for (NSUInteger i; i < n; i++) {
@@ -49,16 +49,16 @@ for (NSUInteger i; i < n; i++) {
 
 ### Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.
 
-The English language permits some rather odd sentences to be grammatical correct—albeit, in bad style due to their confusing nature. This repetitive homonym first appeared in print in 1967 in Dmitri Borgmann's *Beyond Language: Adventures in Word and Thought*. This [Wikipedia](https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo) page parses out its structure and meaning which translates to "Bison from Buffalo, New York, who are intimidated by other bison in their community, also happen to intimidate other bison in their community."
+The English language permits some rather odd sentences to be grammatically correct—albeit, in bad style due to their confusing nature. This repetitive sentence first appeared in print in 1967 in Dmitri Borgmann's *Beyond Language: Adventures in Word and Thought*. This [Wikipedia](https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo) page parses out its structure and meaning which translates to "Bison from Buffalo, New York, who are intimidated by other bison in their community, also happen to intimidate other bison in their community."
 
 Let's use this sentence as an example problem for writing a `for` loop. We need to print the word "buffalo" eight times, with a space between each one and a period at the end. Also, you'll notice that the first, third, and seventh repetitions of the the word at capitalized. This is important to the grammar of the sentence, indicating that they're proper nouns. Let's be sure to factor that into our solution as well.
 
 Before we start on our `for` loop, we're going to need a container to hold the sentence as we build it. Let's use an `NSMutableString` object for this purpose. We'll need to declare and initialize it *before* we start the loop, however, since anything created within the **scope** of the loop will get destroyed at the end of each pass, or *iteration*, through it. (We'll explain scope in more detail in a future reading.)
 
 ```objc
-NSMutableString *grammarQuirk = [[NSMutableString alloc]init];
+NSMutableString *grammarQuirk = [[NSMutableString alloc] init];
 ```
-Remember that when creating a mutable type, we always have to use the method initializers and not the literal syntax, since that would create an `NSString` object. The line above will generate an empty mutable string, which is exactly what we want to start with in this case.
+Remember that when creating a mutable type, we can't use the literal syntax directly since it creates immutable `NSString` objects. The line above will generate an empty mutable string, which is exactly what we want to start with in this case.
     
 ### Setting The Counter
     
