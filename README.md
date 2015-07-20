@@ -27,12 +27,18 @@ So what happens when we want to perform the same action multiple times without r
 
 ## Loop Anatomy 101
 
-In structured programming, a "loop" is the concept of repeating a set of instructions until a condition or set of conditions is met. They are generally governed by a "counter" variable that is set at run time so that the number of iterations that the loop performs is dynamic and correct for its present situation. In Objective-C, one of the basic forms of a loop the `for` loop.
+In structured programming, a "loop" is the concept of repeating a set of instructions until a condition or set of conditions is met. They are generally governed by a "counter" variable that is set at run time so that the number of iterations that the loop performs is dynamic and correct for its present situation. Although there are different types of looping constructs in Objective-C, we'll be taking a look at the `for` loop in this lesson. Let's take a look at an example, and then we'll break down the different components of a loop:
 
-The `for` loop is named such because it begins with the key word "for". It has three parts: 
+```objc
+for (NSUInteger i; i < n; i++) {
+    // instructions for each pass through the loop go here.
+}
+```
+
+The `for` loop, so named  because it begins with the key word "for", has three parts: 
 
   * The name of the loop construct, in this case `for`.
-  * A parenthetical `(` `)` that which is comprised of three short statements separated by semicolons (`;`):
+  * A parenthetical `(` `)`,  which is comprised of three short statements separated by semicolons (`;`):
       - the variable "initialization" (usually `NSUInteger i`),
       - the "conditional" check (usually `i < n` for some value `n`),
       - the "increment" step for each pass of the loop (usually `i++`).
