@@ -46,19 +46,13 @@ The `for` loop, so named  because it begins with the key word "for", has three p
 
 **Note:** *The "increment operator" (* `++` *) means "add one" and is equivalent to setting the integer to itself plus one, as in* `i = i + 1`.
 
-```objc
-for (NSUInteger i; i < n; i++) {
-    // instructions for each pass through the loop go here.
-}
-```
-
 ## Implementing A Loop
 
 ### Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.
 
 The English language permits some rather odd sentences to be grammatically correct—albeit, in bad style due to their confusing nature. This repetitive sentence first appeared in print in 1967 in Dmitri Borgmann's *Beyond Language: Adventures in Word and Thought*. This [Wikipedia](https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo) page parses out its structure and meaning which translates to "Bison from Buffalo, New York, who are intimidated by other bison in their community, also happen to intimidate other bison in their community."
 
-Let's use this sentence as an example problem for writing a `for` loop. We need to print the word "buffalo" eight times, with a space between each one and a period at the end. Also, you'll notice that the first, third, and seventh repetitions of the the word at capitalized. This is important to the grammar of the sentence, indicating that they're proper nouns. Let's be sure to factor that into our solution as well.
+Let's use this sentence as an example problem for writing a `for` loop. We need to print the word "buffalo" eight times, with a space between each one and a period at the end. Also, you'll notice that the first, third, and seventh repetitions of the the word are capitalized. This is important to the grammar of the sentence, indicating that they're proper nouns. Let's be sure to factor that into our solution as well.
 
 Before we start on our `for` loop, we're going to need a container to hold the sentence as we build it. Let's use an `NSMutableString` object for this purpose. We'll need to declare and initialize it *before* we start the loop, however, since anything created within the **scope** of the loop will get destroyed at the end of each pass, or *iteration*, through it. (We'll explain scope in more detail in a future reading.)
 
@@ -66,7 +60,7 @@ Before we start on our `for` loop, we're going to need a container to hold the s
 NSMutableString *grammarQuirk = [[NSMutableString alloc] init];
 ```
 
-Remember that when creating a mutable type, we can't use the literal syntax directly since it creates immutable `NSString` objects. The line above will generate an empty mutable string, which is exactly what we want to start with in this case.
+Remember that when creating a mutable string, we can't use the literal string syntax directly since it only creates *immutable* (or "static") `NSString` objects. The line above will generate an empty mutable string, which is exactly what we want to start with in this case.
     
 ### Setting The Counter
     
