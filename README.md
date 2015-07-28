@@ -35,6 +35,8 @@ for (NSUInteger i; i < n; i++) {
 }
 ```
 
+**Note:** *The* `for in` *loop is a distinct loop type that will be discussed in a later reading. It is closely related to the* `for` *loop but does not include a counter in its required syntax.*
+
 The `for` loop, so named  because it begins with the key word "for", has three parts: 
 
   * The name of the loop construct, in this case `for`.
