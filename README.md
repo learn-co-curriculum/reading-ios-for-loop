@@ -35,7 +35,7 @@ for (NSUInteger i; i < n; i++) {
 }
 ```
 
-**Note:** *The* `for in` *loop is a distinct loop type that will be discussed in a later reading. It is closely related to the* `for` *loop but does not include a counter in its required syntax.*
+**Note:** *In Objective-C, the* `for` *loop is distinct from the* `for in` *loop which does not explicitly include a counter. This reading is about using the* `for` *loop because they are more useful when working with arrays;* `for in` *loops will be covered in a future reading.*
 
 The `for` loop, so named  because it begins with the key word "for", has three parts: 
 
@@ -73,6 +73,7 @@ for (initialization; condition; increment) {
     statements
 }
 ```
+**Top-tip:** *It's easy to confuse a* `for in` *loop for a* `for` *loop. Make sure you're declaring the kind of loop that you intend.*
 
 This is really handy for reminding us what goes where. In this first line, we need to declare our counter, its end point check, and the increment of the counts between each loop. Filled in, that first line should look like this:
 
