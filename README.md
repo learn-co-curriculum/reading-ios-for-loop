@@ -50,7 +50,7 @@ The `for` loop, so named  because it begins with the key word "for", has three p
 
 ## Implementing A Loop
 
-### Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.
+**Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.**
 
 The English language permits some rather odd sentences to be grammatically correct—albeit, in bad style due to their confusing nature. This repetitive sentence first appeared in print in 1967 in Dmitri Borgmann's *Beyond Language: Adventures in Word and Thought*. This [Wikipedia](https://en.wikipedia.org/wiki/Buffalo_buffalo_Buffalo_buffalo_buffalo_buffalo_Buffalo_buffalo) page parses out its structure and meaning which translates to "Bison from Buffalo, New York, who are intimidated by other bison in their community, also happen to intimidate other bison in their community."
 
