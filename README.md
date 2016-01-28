@@ -168,4 +168,4 @@ Perfect!
 
 Take a look at this post by [MentalFloss](http://mentalfloss.com/article/49238/7-sentences-sound-crazy-are-still-grammatical) which lists a handful of other quirky sentences which are grammatically correct. None of the others lend themselves quite so well to looping, however.
 
-<a href='https://learn.co/lessons/reading-ios-for-loop' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/reading-ios-for-loop' title='The for Loop'>The for Loop</a> on Learn.co and start learning to code for free.</p>
